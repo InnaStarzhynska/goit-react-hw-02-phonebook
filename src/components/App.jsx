@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Notiflix from 'notiflix';
+import css from './App.module.css';
 import { PhonebookForm } from './PhonebookForm/PhonebookForm';
 import { ContactsList } from './ContactsList/ContactsList';
 import { Filter } from './Filter/Filter';
@@ -44,9 +45,9 @@ state = {
   render() {
     return (
       <div>
-        <h1 className='titleForm'>Phonebook</h1>
+        <h1 className={css.titleForm}>Phonebook</h1>
         <PhonebookForm addContact={this.handleAddContact} />
-        <h2 className='titleContacts'>Contacts</h2>
+        <h2 className={css.titleContacts}>Contacts</h2>
         <Filter value={this.state.filter} handleChange={this.handleChangeFilter}/>
         <ContactsList contacts={this.handleFilterContacts()} deleteContact={this.handleDeleteContact} />
       </div>
